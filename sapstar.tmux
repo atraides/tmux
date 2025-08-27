@@ -41,7 +41,7 @@ unset_option() {
 
 main() {
     local theme
-    theme="$(get_tmux_option "@sapstar_variant" "")"
+    theme="$(get_tmux_option "@sapstar_variant" "main")"
 
     # INFO: Not removing the thm_hl_low and thm_hl_med colors for posible features
     # INFO: If some variables appear unused, they are being used either externally
@@ -135,12 +135,12 @@ main() {
 
     # Shows username of the user the tmux session is run by
     local user
-    user="$(get_tmux_option "@sapstar_user" "")"
+    user="$(get_tmux_option "@sapstar_user" "on")"
     readonly user
 
     # Shows hostname of the computer the tmux session is run on
     local host
-    host="$(get_tmux_option "@sapstar_host" "")"
+    host="$(get_tmux_option "@sapstar_host" "off")"
     readonly host
 
     # Date and time command: follows the date UNIX command structure
@@ -150,17 +150,17 @@ main() {
 
     # Shows truncated current working directory
     local directory
-    directory="$(get_tmux_option "@sapstar_directory" "")"
+    directory="$(get_tmux_option "@sapstar_directory" "off")"
 
     local disable_active_window_menu
-    disable_active_window_menu="$(get_tmux_option "@sapstar_disable_active_window_menu" "")"
+    disable_active_window_menu="$(get_tmux_option "@sapstar_disable_active_window_menu" "on")"
 
     local show_current_program
-    show_current_program="$(get_tmux_option "@sapstar_show_current_program" "")"
+    show_current_program="$(get_tmux_option "@sapstar_show_current_program" "off")"
     readonly show_current_program
 
     local window_directory
-    window_directory="$(get_tmux_option "@sapstar_show_pane_directory" "")"
+    window_directory="$(get_tmux_option "@sapstar_show_pane_directory" "off")"
     readonly window_directory
 
     local window_separator 
@@ -168,7 +168,7 @@ main() {
     readonly window_separator 
 
     local default_window_behavior
-    default_window_behavior="$(get_tmux_option "@sapstar_default_window_behavior" "")"
+    default_window_behavior="$(get_tmux_option "@sapstar_default_window_behavior" "on")"
     readonly default_window_behavior
 
     # Changes the background color for the current active window
@@ -179,7 +179,7 @@ main() {
 
     # Transparency enabling for status bar
     local bar_bg_disable
-    bar_bg_disable="$(get_tmux_option "@sapstar_bar_bg_disable" "")"
+    bar_bg_disable="$(get_tmux_option "@sapstar_bar_bg_disable" "on")"
     readonly bar_bg_disable
 
     # Transparent option for status bar
@@ -189,7 +189,7 @@ main() {
 
     # Shows hostname of the computer the tmux session is run on
     local only_windows
-    only_windows="$(get_tmux_option "@sapstar_only_windows" "")"
+    only_windows="$(get_tmux_option "@sapstar_only_windows" "off")"
     readonly only_windows
 
     # Allows user to set a few custom sections (for integration with other plugins)
