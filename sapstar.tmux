@@ -115,9 +115,9 @@ main() {
     set status-left-length "200"
     set status-right-length "200"
 
-    # # Start windows and panes at 1, not 0
-    # set -g base-index 1
-    # set -g pane-base-index 1
+    # Start windows and panes at 1, not 0
+    set base-index 1
+    set pane-base-index 1
     # set-window-option -g pane-base-index 1
     # set-option -g renumber-windows on
     #
