@@ -1,13 +1,11 @@
 #!/usr/bin/env bash
 #
-# Rosé Pine - tmux theme
+# SAPstar - tmux theme 
 #
-# Almost done, any bug found file a PR to rose-pine/tmux
-#
-# Inspired by dracula/tmux, catppucin/tmux & challenger-deep-theme/tmux
+# Inspired by dracula/tmux, catppucin/tmux, challenger-deep-theme/tmux & rose-pine/tmux
 #
 #
-export TMUX_ROSEPINE_DIR="$( cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd)"
+export TMUX_SAPSTAR_DIR="$( cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd)"
 
 get_tmux_option() {
     local option value default
@@ -43,7 +41,7 @@ unset_option() {
 
 main() {
     local theme
-    theme="$(get_tmux_option "@rose_pine_variant" "")"
+    theme="$(get_tmux_option "@sapstar_variant" "")"
 
     # INFO: Not removing the thm_hl_low and thm_hl_med colors for posible features
     # INFO: If some variables appear unused, they are being used either externally
@@ -137,142 +135,142 @@ main() {
 
     # Shows username of the user the tmux session is run by
     local user
-    user="$(get_tmux_option "@rose_pine_user" "")"
+    user="$(get_tmux_option "@sapstar_user" "")"
     readonly user
 
     # Shows hostname of the computer the tmux session is run on
     local host
-    host="$(get_tmux_option "@rose_pine_host" "")"
+    host="$(get_tmux_option "@sapstar_host" "")"
     readonly host
 
     # Date and time command: follows the date UNIX command structure
     local date_time
-    date_time="$(get_tmux_option "@rose_pine_date_time" "")"
+    date_time="$(get_tmux_option "@sapstar_date_time" "")"
     readonly date_time
 
     # Shows truncated current working directory
     local directory
-    directory="$(get_tmux_option "@rose_pine_directory" "")"
+    directory="$(get_tmux_option "@sapstar_directory" "")"
 
     local disable_active_window_menu
-    disable_active_window_menu="$(get_tmux_option "@rose_pine_disable_active_window_menu" "")"
+    disable_active_window_menu="$(get_tmux_option "@sapstar_disable_active_window_menu" "")"
 
     local show_current_program
-    show_current_program="$(get_tmux_option "@rose_pine_show_current_program" "")"
+    show_current_program="$(get_tmux_option "@sapstar_show_current_program" "")"
     readonly show_current_program
 
     local window_directory
-    window_directory="$(get_tmux_option "@rose_pine_show_pane_directory" "")"
+    window_directory="$(get_tmux_option "@sapstar_show_pane_directory" "")"
     readonly window_directory
 
     local window_separator 
-    window_separator="$(get_tmux_option "@rose_pine_window_separator" "")"
+    window_separator="$(get_tmux_option "@sapstar_window_separator" "")"
     readonly window_separator 
 
     local default_window_behavior
-    default_window_behavior="$(get_tmux_option "@rose_pine_default_window_behavior" "")"
+    default_window_behavior="$(get_tmux_option "@sapstar_default_window_behavior" "")"
     readonly default_window_behavior
 
     # Changes the background color for the current active window
     # TODO: Together with line 251-269, end development for this feature
     # local active_window_color
-    # active_window_color="$(get_tmux_option "@rose_pine_active_window_color" "")"
+    # active_window_color="$(get_tmux_option "@sapstar_active_window_color" "")"
     # readonly active_window_color
 
     # Transparency enabling for status bar
     local bar_bg_disable
-    bar_bg_disable="$(get_tmux_option "@rose_pine_bar_bg_disable" "")"
+    bar_bg_disable="$(get_tmux_option "@sapstar_bar_bg_disable" "")"
     readonly bar_bg_disable
 
     # Transparent option for status bar
     local bar_bg_disabled_color_option
-    bar_bg_disabled_color_option="$(get_tmux_option "@rose_pine_bar_bg_disabled_color_option" "0")"
+    bar_bg_disabled_color_option="$(get_tmux_option "@sapstar_bar_bg_disabled_color_option" "0")"
     readonly bar_bg_disabled_color_option
 
     # Shows hostname of the computer the tmux session is run on
     local only_windows
-    only_windows="$(get_tmux_option "@rose_pine_only_windows" "")"
+    only_windows="$(get_tmux_option "@sapstar_only_windows" "")"
     readonly only_windows
 
     # Allows user to set a few custom sections (for integration with other plugins)
     # Before the plugin's left section
     local status_left_prepend_section
-    status_left_prepend_section="$(get_tmux_option "@rose_pine_status_left_prepend_section" "")"
+    status_left_prepend_section="$(get_tmux_option "@sapstar_status_left_prepend_section" "")"
     readonly status_left_prepend_section
     #
     # after the plugin's left section
     local status_left_append_section
-    status_left_append_section="$(get_tmux_option "@rose_pine_status_left_append_section" "")"
+    status_left_append_section="$(get_tmux_option "@sapstar_status_left_append_section" "")"
     readonly status_left_append_section
     # Before the plugin's right section
     local status_right_prepend_section
-    status_right_prepend_section="$(get_tmux_option "@rose_pine_status_right_prepend_section" "")"
+    status_right_prepend_section="$(get_tmux_option "@sapstar_status_right_prepend_section" "")"
     readonly status_right_prepend_section
     #
     # after the plugin's right section
     local status_right_append_section
-    status_right_append_section="$(get_tmux_option "@rose_pine_status_right_append_section" "")"
+    status_right_append_section="$(get_tmux_option "@sapstar_status_right_append_section" "")"
     readonly status_right_append_section
 
     # Settings that allow user to choose their own icons and status bar behaviour
     # START
     local current_window_icon
-    current_window_icon="$(get_tmux_option "@rose_pine_current_window_icon" "")"
+    current_window_icon="$(get_tmux_option "@sapstar_current_window_icon" "")"
     readonly current_window_icon
 
     local current_session_icon
-    current_session_icon="$(get_tmux_option "@rose_pine_session_icon" "")"
+    current_session_icon="$(get_tmux_option "@sapstar_session_icon" "")"
     readonly current_session_icon
 
     local username_icon
-    username_icon="$(get_tmux_option "@rose_pine_username_icon" "")"
+    username_icon="$(get_tmux_option "@sapstar_username_icon" "")"
     readonly username_icon
 
     local hostname_icon
-    hostname_icon="$(get_tmux_option "@rose_pine_hostname_icon" "󰒋")"
+    hostname_icon="$(get_tmux_option "@sapstar_hostname_icon" "󰒋")"
     readonly hostname_icon
 
     local hostname_short
-    hostname_short="$(get_tmux_option "@rose_pine_hostname_short" "")"
+    hostname_short="$(get_tmux_option "@sapstar_hostname_short" "")"
     readonly hostname_short
 
     local date_time_icon
-    date_time_icon="$(get_tmux_option "@rose_pine_date_time_icon" "󰃰")"
+    date_time_icon="$(get_tmux_option "@sapstar_date_time_icon" "󰃰")"
     readonly date_time_icon
 
     local current_folder_icon
-    current_folder_icon="$(get_tmux_option "@rose_pine_folder_icon" "")"
+    current_folder_icon="$(get_tmux_option "@sapstar_folder_icon" "")"
     readonly current_folder_icon
 
     # Changes the icon / character that goes between each window's name in the bar
     local window_status_separator
-    window_status_separator="$(get_tmux_option "@rose_pine_window_status_separator" "  ")"
+    window_status_separator="$(get_tmux_option "@sapstar_window_status_separator" "  ")"
 
     # This setting does nothing by itself, it enables the 2 below it to toggle the simplified bar
     local prioritize_windows
-    prioritize_windows="$(get_tmux_option "@rose_pine_prioritize_windows" "")"
+    prioritize_windows="$(get_tmux_option "@sapstar_prioritize_windows" "")"
 
     # Allows the user to set a min width at which most of the bar elements hide, or
     local user_window_width
-    user_window_width="$(get_tmux_option "@rose_pine_width_to_hide" "")"
+    user_window_width="$(get_tmux_option "@sapstar_width_to_hide" "")"
 
     # A number of windows, when over it, the bar gets simplified
     local user_window_count
-    user_window_count="$(get_tmux_option "@rose_pine_window_count" "")"
+    user_window_count="$(get_tmux_option "@sapstar_window_count" "")"
 
     # Custom window status that goes between the number and the window name
     local custom_window_sep="#[fg=$thm_iris]#I#[fg=$thm_iris,]$window_separator#[fg=$thm_iris]#W"
     local custom_window_sep_current="#I#[fg=$thm_gold,bg=""]$window_separator#[fg=$thm_gold,bg=""]#W"
 
     local right_separator
-    right_separator="$(get_tmux_option "@rose_pine_right_separator" "  ")"
+    right_separator="$(get_tmux_option "@sapstar_right_separator" "  ")"
 
     local left_separator
-    left_separator="$(get_tmux_option "@rose_pine_left_separator" "  ")"
+    left_separator="$(get_tmux_option "@sapstar_left_separator" "  ")"
 
     local field_separator
     # NOTE: Don't remove
-    field_separator="$(get_tmux_option "@rose_pine_field_separator" " | " )"
+    field_separator="$(get_tmux_option "@sapstar_field_separator" " | " )"
 
     # END
 
