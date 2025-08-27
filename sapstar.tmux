@@ -115,12 +115,12 @@ main() {
     set status-left-length "200"
     set status-right-length "200"
 
-    # Start windows and panes at 1, not 0
-    set -g base-index 1
-    set -g pane-base-index 1
-    set-window-option -g pane-base-index 1
-    set-option -g renumber-windows on
-
+    # # Start windows and panes at 1, not 0
+    # set -g base-index 1
+    # set -g pane-base-index 1
+    # set-window-option -g pane-base-index 1
+    # set-option -g renumber-windows on
+    #
 
     # Theoretically messages (need to figure out color placement)
     set message-style "fg=$thm_muted,bg=$thm_base"
